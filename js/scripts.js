@@ -10,4 +10,32 @@ const pokemanList = [
 	{ name: "Kadabra", height: 1, type: ["psychic"], weight: 56.5 }, // #64
 ];
 
-document.write(`Here there are ${pokemanList.length} Pokémon`);
+text = "<ul>";
+
+for (let i = 0; i < pokemanList.length; i++) {
+	if (pokemanList[i].height > 6) {
+		text +=
+			"<li>" +
+			pokemanList[i].name +
+			" ( " +
+			"height" +
+			pokemanList[i].height +
+			" ) " +
+			" Wow, that’s big " +
+			"</li>";
+	}
+	text +=
+		"<li>" +
+		pokemanList[i].name +
+		" ( " +
+		"height" +
+		pokemanList[i].height +
+		" ) " +
+		"</li>";
+}
+
+text += "</ul>";
+
+document.getElementById("pokemon-list").innerHTML = text;
+
+//document.write(`Here there are ${pokemanList.length} Pokémon`);
