@@ -11,28 +11,12 @@ const pokemonList = [
 ];
 
 text = "<ul>";
-
-for (let i = 0; i < pokemonList.length; i++) {
-	if (pokemonList[i].height > 6) {
-		text +=
-			"<li>" +
-			pokemonList[i].name +
-			" ( " +
-			"height" +
-			pokemonList[i].height +
-			" ) " +
-			" Wow, that’s big " +
-			"</li>";
+pokemonList.forEach(function (pokemon) {
+	if (pokemon.height > 6) {
+		text += `<li> ${pokemon.name} ( height ) ${pokemon.height} Wow!! that's big </li>`;
 	}
-	text +=
-		"<li>" +
-		pokemonList[i].name +
-		" ( " +
-		"height" +
-		pokemonList[i].height +
-		" ) " +
-		"</li>";
-}
+	text += `<li> ${pokemon.name} ( height ) ${pokemon.height} </li>`;
+});
 
 text += "</ul>";
 
