@@ -12,10 +12,11 @@ const pokemonList = [
 
 text = "<ul>";
 pokemonList.forEach(function (pokemon) {
-	if (pokemon.height > 6) {
+	if (pokemon.height > 1) {
 		text += `<li> ${pokemon.name} ( height ) ${pokemon.height} Wow!! that's big </li>`;
+	} else {
+		text += `<li> ${pokemon.name} ( height ) ${pokemon.height} </li>`;
 	}
-	text += `<li> ${pokemon.name} ( height ) ${pokemon.height} </li>`;
 });
 
 text += "</ul>";
