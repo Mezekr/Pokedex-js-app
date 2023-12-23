@@ -18,50 +18,74 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	border: 2px splid #0ed629;
+	font-size: 18px;
 }
 header {
 	width: 100%;
 	text-align: center;
-	background-color: burlywood;
+	background-color: rgb(80, 103, 138);
 }
-main {
+
+main,
+.main-container {
+	display: flex;
+	width: 95%;
+	margin: 20px;
+	padding: 10px;
+	gap: 40px;
 	text-align: center;
 }
-.main-container {
-	width: 90%;
-	margin: 0;
-	padding: 10px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	gap: 10px;
-	/* background-color: cadetblue; */
+.pokemon-box {
+	flex: 50%;
+	padding: 0;
+	background-color: rgb(178, 184, 192);
 }
-.main-container > div {
-	background-color: #f1f1f1;
-	margin: 10px;
-	padding: 10px;
-	width: 50%;
+.pokemon-box h1 {
+	margin: 15px;
+	padding: 8px;
+	font-size: 2rem;
 }
+
+.pokemon-list-container,
+#pokemon-card-container {
+	padding: 0;
+}
+
 #pokemon-list ul {
 	text-decoration: none;
 	list-style: none;
 	text-align: left;
+	margin: 0;
+	padding: 0;
+	overflow: auto;
 }
 
 #pokemon-list ul li {
 	display: block;
-	padding: 1.5em;
+	border: 1px solid rgb(221, 221, 221);
+	background-color: rgb(246, 246, 246);
+	margin: -1px 0 0 0;
+	padding: 12px;
+	text-decoration: none;
+	font-size: 1em;
+	color: rgb(0, 0, 0);
 }
-.pokemon-view-card {
-	margin: 0;
-	padding: 100px;
+#pokemon-list ul li:hover {
+	background-color: #eee;
+}
+#pokemon-view-card {
+	padding: 10px;
+	box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2);
+	max-width: 500px;
+	margin: 20px auto;
+	min-height: 400px;
+	background-color: rgb(184, 163, 48);
 }
 
 footer {
 	margin-top: auto;
 	width: 100%;
 	padding: 25px;
-	background-color: #0ed629;
+	background-color: #1d5566;
 	border: 2px solid black;
 }
