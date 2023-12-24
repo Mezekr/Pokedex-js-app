@@ -40,9 +40,21 @@ let pokemonRepository = (function () {
 		return pokemonList;
 	}
 
+	// Display a list of Pokemons in the index page
+	function addListItem(pokemon) {
+		let pokemonList = document.querySelector(".pokemon-list");
+		let pokemomlistItem = document.createElement("li");
+		let button = document.createElement("button");
+		button.innerText = pokemon.name;
+		button.classList.add("button-class");
+		pokemomlistItem.appendChild(button);
+		pokemonList.appendChild(pokemomlistItem);
+	}
+
 	return {
 		add: add,
 		getAll: getAll,
+		addListItem: addListItem,
 	};
 })();
 
@@ -56,20 +68,13 @@ pokemonRepository.add({
 // test: do not add a Pokémon object instead of just a string
 pokemonRepository.add("Pinsir");
 
+// Display a list of Pokemons in the index page
+pokemonRepository.getAll().forEach(function (pokemon) {
+	pokemonRepository.addListItem(pokemon);
+});
+
 // test: add empty pokemon object
 pokemonRepository.add({});
-
-// Display a list of Pokemons in the index page
-text = "<ul>";
-pokemonRepository.getAll().forEach(function (pokemon) {
-	if (pokemon.height > 1) {
-		text += `<li> ${pokemon.name} ( height ) ${pokemon.height} Wow!! that's big </li>`;
-	} else {
-		text += `<li> ${pokemon.name} ( height ) ${pokemon.height} </li>`;
-	}
-});
-text += "</ul>";
-document.getElementById("pokemon-list").innerHTML = text;
 
 // check Pokemon by name
 function findByName(name) {
