@@ -40,7 +40,7 @@ let pokemonRepository = (function () {
 		return pokemonList;
 	}
 
-	// Display a list of Pokemons in the index page
+	// Display a list of Pokemons in the index page as buttons
 	function addListItem(pokemon) {
 		let pokemonList = document.querySelector(".pokemon-list");
 		let pokemomlistItem = document.createElement("li");
@@ -49,6 +49,11 @@ let pokemonRepository = (function () {
 		button.classList.add("button-class");
 		pokemomlistItem.appendChild(button);
 		pokemonList.appendChild(pokemomlistItem);
+		button.addEventListener("click", showDetails(pokemon));
+	}
+
+	function showDetails(pokemon) {
+		console.log(pokemon);
 	}
 
 	return {
