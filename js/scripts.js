@@ -49,11 +49,17 @@ let pokemonRepository = (function () {
 		button.classList.add("button-class");
 		pokemomlistItem.appendChild(button);
 		pokemonList.appendChild(pokemomlistItem);
-		button.addEventListener("click", showDetails(pokemon));
+		clickListener(button, pokemon);
+	}
+
+	function clickListener(selector, pokemonObj) {
+		selector.addEventListener("click", showDetails(pokemonObj));
 	}
 
 	function showDetails(pokemon) {
 		console.log(pokemon);
+		let pokemonCard = document.querySelector("#pokemon-view-card");
+		pokemonCard.innerText = pokemon.name;
 	}
 
 	return {
