@@ -53,7 +53,9 @@ let pokemonRepository = (function () {
 	}
 
 	function clickListener(selector, pokemonObj) {
-		selector.addEventListener("click", showDetails(pokemonObj));
+		selector.addEventListener("click", function () {
+			showDetails(pokemonObj);
+		});
 	}
 
 	function showDetails(pokemon) {
