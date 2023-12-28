@@ -77,9 +77,15 @@ let pokemonRepository = (function () {
 	}
 
 	function showDetails(pokemon) {
-		console.log(pokemon);
 		let pokemonCard = document.querySelector("#pokemon-view-card");
-		pokemonCard.innerText = pokemon.name;
+
+		loadDetails(pokemon).then(() => {
+			let text = "";
+			for (key in pokemon) {
+				text += key + ":  " + pokemon[key] + "<br>";
+			}
+			pokemonCard.innerHTML = text;
+		});
 	}
 
 	return {
@@ -105,7 +111,6 @@ pokemonRepository.add("Pinsir"); */
 pokemonRepository.loadList().then(() => {
 	pokemonRepository.getAll().forEach(function (pokemon) {
 		pokemonRepository.addListItem(pokemon);
-		pokemonRepository.loadDetails(pokemon);
 	});
 });
 
