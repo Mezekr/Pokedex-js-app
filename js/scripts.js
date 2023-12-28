@@ -41,6 +41,19 @@ let pokemonRepository = (function () {
 		return apiData;
 	}
 
+	function loadDetails(item) {
+		let pokemonData = fetch(item.datailUrl)
+			.then((reponse) => {
+				return reponse.json();
+			})
+			.then((itemsJson) => {
+				item.name = itemsJson.name;
+				item.imgUrl = itemsJson.sprites.front_default;
+				item.height = itemsJson.height;
+				item.weight = itemsJson.weight;
+			});
+		return pokemonData;
+	}
 	function getAll() {
 		return pokemonList;
 	}
@@ -74,10 +87,11 @@ let pokemonRepository = (function () {
 		getAll: getAll,
 		addListItem: addListItem,
 		loadList: loadList,
+		loadDetails: loadDetails,
 	};
 })();
 
-// test: add pokemon object
+/* // test: add pokemon object
 pokemonRepository.add({
 	name: "Pinsir",
 	height: 1.5,
@@ -85,12 +99,13 @@ pokemonRepository.add({
 	weight: 55,
 });
 // test: do not add a Pokémon object instead of just a string
-pokemonRepository.add("Pinsir");
+pokemonRepository.add("Pinsir"); */
 
 // Display a list of Pokemons in the index page
 pokemonRepository.loadList().then(() => {
 	pokemonRepository.getAll().forEach(function (pokemon) {
 		pokemonRepository.addListItem(pokemon);
+		pokemonRepository.loadDetails(pokemon);
 	});
 });
 
