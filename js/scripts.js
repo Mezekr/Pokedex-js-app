@@ -19,6 +19,28 @@ let pokemonRepository = (function () {
 			pokemonList.push(pokemon);
 		}
 	}
+
+	// Loads data from the pokeapi
+	function loadList() {
+		let apiData = fetch(apiUrl)
+			.then(function (resonse) {
+				return resonse.json();
+			})
+			.then(function (resonseJson) {
+				resonseJson.results.forEach((item) => {
+					let pokemon = {
+						name: item.name,
+						datailUrl: item.url,
+					};
+					add(pokemon);
+				});
+			})
+			.catch(function (err) {
+				console.error(err);
+			});
+		return apiData;
+	}
+
 	function getAll() {
 		return pokemonList;
 	}
@@ -51,6 +73,7 @@ let pokemonRepository = (function () {
 		add: add,
 		getAll: getAll,
 		addListItem: addListItem,
+		loadList: loadList,
 	};
 })();
 
@@ -65,8 +88,10 @@ pokemonRepository.add({
 pokemonRepository.add("Pinsir");
 
 // Display a list of Pokemons in the index page
-pokemonRepository.getAll().forEach(function (pokemon) {
-	pokemonRepository.addListItem(pokemon);
+pokemonRepository.loadList().then(() => {
+	pokemonRepository.getAll().forEach(function (pokemon) {
+		pokemonRepository.addListItem(pokemon);
+	});
 });
 
 // test: add empty pokemon object
