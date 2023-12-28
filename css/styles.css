@@ -46,9 +46,10 @@ main,
 	font-size: 2rem;
 }
 
-.pokemon-list-container,
-#pokemon-card-container {
+.pokemon-list-container {
 	padding: 0;
+	max-height: 600px;
+	overflow-y: scroll;
 }
 
 .pokemon-list {
@@ -57,7 +58,6 @@ main,
 	text-align: left;
 	margin: 0;
 	padding: 0;
-	/* overflow: auto; */
 }
 
 .pokemon-list ul li {
@@ -80,6 +80,7 @@ main,
 	margin: 20px auto;
 	min-height: 400px;
 	background-color: rgb(184, 163, 48);
+	overflow-x: auto;
 }
 
 footer {
@@ -117,8 +118,9 @@ footer {
 		padding: 10px 2px;
 	}
 	.pokemon-list-container {
-		overflow: scroll;
+		overflow: auto;
 		padding: 3px;
+		max-height: 200px;
 	}
 	#pokemon-view-card {
 		padding: 5px;
