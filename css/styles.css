@@ -132,6 +132,32 @@ main,
 	padding: 0;
 }
 
+.pokemon-name {
+	text-align: center;
+	font-weight: 600;
+	margin: 0.1em auto 0.4em;
+	padding: 0.1em;
+	/* border: 2px solid red; */
+}
+
+.pokemon-stats {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	font-weight: 600;
+}
+.pokemon-stats p,
+h3 {
+	color: #404060;
+	padding: 0.1em;
+	margin: 0.1em;
+}
+.pokemon-stats h3 {
+	padding: 0.1em;
+	margin: 0.1em;
+}
+
 #pokemon-view-card {
 	padding: 10px;
 	box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2);
