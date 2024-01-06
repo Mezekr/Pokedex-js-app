@@ -106,6 +106,18 @@ main,
 	background-color: #ccdfce;
 }
 
+.modal {
+	width: 350px;
+}
+.modal img {
+	display: block;
+	width: 180px;
+	max-height: 200px;
+	position: relative;
+	margin: 5px auto;
+	padding: 0;
+}
+
 #pokemon-view-card {
 	padding: 10px;
 	box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2);
