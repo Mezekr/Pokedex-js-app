@@ -112,11 +112,12 @@ let pokemonRepository = (function () {
 
 		// Display the pokemon datails
 		loadDetails(pokemon).then(() => {
-			let text = "";
-			for (key in pokemon) {
-				text += key + ":  " + pokemon[key] + "<br>";
-			}
-			pokemonCard.innerHTML = text;
+			pokemonImg.src = pokemon.imgUrl;
+			pokemonName.innerText = pokemon.name;
+			pokemomHeightH3.innerText = "Height";
+			pokemomHeightP.innerText = pokemon.height;
+			pokemomWeighH3.innerText = "Weght";
+			pokemomWeightP.innerText = pokemon.weight;
 		});
 
 		// add all elements to datail's container (div) of modal
