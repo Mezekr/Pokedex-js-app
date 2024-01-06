@@ -86,6 +86,31 @@ let pokemonRepository = (function () {
 		closeButton.innerText = "Close";
 		closeButton.classList.add("modal-close");
 
+		// Modal elements to display pokemon datails
+		let pokemonDetail = document.createElement("div");
+		let pokemonImg = document.createElement("img");
+		let pokemonName = document.createElement("h2");
+		let pokemonStatsDiv = document.createElement("div");
+
+		// pokemon height elements container and elements
+		let pokemomHeightDiv = document.createElement("div");
+		let pokemomHeightH3 = document.createElement("h3");
+		let pokemomHeightP = document.createElement("p");
+		pokemomHeightDiv.appendChild(pokemomHeightP);
+		pokemomHeightDiv.appendChild(pokemomHeightH3);
+
+		// pokemon Weight elements container and elements
+		let pokemomWeightDiv = document.createElement("div");
+		let pokemomWeighH3 = document.createElement("h3");
+		let pokemomWeightP = document.createElement("p");
+		pokemomWeightDiv.appendChild(pokemomWeightP);
+		pokemomWeightDiv.appendChild(pokemomWeighH3);
+
+		// append height and weight elements container to status container
+		pokemonStatsDiv.appendChild(pokemomHeightDiv);
+		pokemonStatsDiv.appendChild(pokemomWeightDiv);
+
+		// Display the pokemon datails
 		loadDetails(pokemon).then(() => {
 			let text = "";
 			for (key in pokemon) {
@@ -94,6 +119,12 @@ let pokemonRepository = (function () {
 			pokemonCard.innerHTML = text;
 		});
 
+		// add all elements to datail's container (div) of modal
+		pokemonDetail.append(pokemonImg);
+		pokemonDetail.append(pokemonName);
+		pokemonDetail.append(pokemonStatsDiv);
+
+		// append elements to modal
 		modal.appendChild(closeButton);
 		modalContainer.appendChild(modal);
 		modalContainer.classList.add("is-visible");
