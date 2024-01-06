@@ -124,6 +124,14 @@ let pokemonRepository = (function () {
 		pokemonDetail.append(pokemonName);
 		pokemonDetail.append(pokemonStatsDiv);
 
+		// add css class to elments
+		pokemonName.classList.add("pokemon-name");
+		pokemomHeightP.classList.add("pokemon-stats");
+		pokemomWeightP.classList.add("pokemon-stats");
+		modal.classList.add("modal-wrapper");
+		pokemonStatsDiv.classList.add("pokemon-stats");
+		pokemonDetail.classList.add("modal");
+
 		// append elements to modal
 		modal.appendChild(closeButton);
 		modalContainer.appendChild(modal);
