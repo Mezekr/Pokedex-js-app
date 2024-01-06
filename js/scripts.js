@@ -77,7 +77,14 @@ let pokemonRepository = (function () {
 	}
 
 	function showDetails(pokemon) {
-		let pokemonCard = document.querySelector("#pokemon-view-card");
+		let modalContainer = document.querySelector("#modal-container");
+		modalContainer.innerHTML = "";
+
+		// Modal elements
+		let modal = document.createElement("div");
+		let closeButton = document.createElement("button");
+		closeButton.innerText = "Close";
+		closeButton.classList.add("modal-close");
 
 		loadDetails(pokemon).then(() => {
 			let text = "";
@@ -86,6 +93,10 @@ let pokemonRepository = (function () {
 			}
 			pokemonCard.innerHTML = text;
 		});
+
+		modal.appendChild(closeButton);
+		modalContainer.appendChild(modal);
+		modalContainer.classList.add("is-visible");
 	}
 
 	return {
