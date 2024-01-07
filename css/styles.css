@@ -203,20 +203,37 @@ footer {
 }
 
 /* media queries */
-
 @media (max-width: 600px) {
+	header {
+		font-size: 0.6em;
+	}
 	main.main-container {
 		flex-direction: column-reverse;
 		margin: 0;
-		padding: 10px 2px;
+		padding: 2px 2px;
+	}
+	main.main-container h1 {
+		font-size: 0.9em;
 	}
 	.pokemon-list-container {
 		overflow: auto;
-		padding: 3px;
-		max-height: 200px;
-	}
-	#pokemon-view-card {
-		padding: 5px;
+		padding: 2px;
 		margin: 5px;
+		height: 80dvh;
+	}
+	.pokemon-modal {
+		padding: 5px;
+		margin: 5px auto;
+		max-width: 100%;
+	}
+	#modal-container.is-visible {
+		padding: 3px;
+		margin: 0px;
+	}
+	.modal-wrapper {
+		width: 310px;
+	}
+	.modal {
+		width: 300px;
 	}
 }
