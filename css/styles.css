@@ -36,16 +36,6 @@ main,
 	gap: 20px;
 	text-align: center;
 }
-.pokemon-box {
-	flex: 50%;
-	padding: 0;
-	background-color: rgb(178, 184, 192);
-}
-.pokemon-box h1 {
-	margin: 15px;
-	padding: 8px;
-	font-size: 2rem;
-}
 
 .pokemon-list-container {
 	background-color: rgb(178, 184, 192);
@@ -164,16 +154,6 @@ h3 {
 .pokemon-stats h3 {
 	padding: 0.1em;
 	margin: 0.1em;
-}
-
-#pokemon-view-card {
-	padding: 10px;
-	box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2);
-	max-width: 500px;
-	margin: 20px auto;
-	min-height: 400px;
-	background-color: rgb(184, 163, 48);
-	overflow-x: auto;
 }
 
 footer {
