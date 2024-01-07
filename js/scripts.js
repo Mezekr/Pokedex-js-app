@@ -177,17 +177,6 @@ let pokemonRepository = (function () {
 	};
 })();
 
-/* // test: add pokemon object
-pokemonRepository.add({
-	name: "Pinsir",
-	height: 1.5,
-	type: ["bug"],
-	weight: 55,
-});
-// test: do not add a Pokémon object instead of just a string
-pokemonRepository.add("Pinsir"); */
-
-// Display a list of Pokemons in the index page
 pokemonRepository.loadList().then(() => {
 	pokemonRepository.getAll().forEach(function (pokemon) {
 		pokemonRepository.addListItem(pokemon);
