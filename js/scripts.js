@@ -139,6 +139,22 @@ let pokemonRepository = (function () {
 		modalContainer.appendChild(modal);
 
 		modalContainer.classList.add("is-visible");
+
+		// Close the modal by clicking the close button
+		closeButton.addEventListener("click", hideModal);
+	}
+
+	// Close the modal by clicking on the area outside the modal
+	let modalContainer = document.querySelector("#modal-container");
+	modalContainer.addEventListener("click", (e) => {
+		if (e.target === modalContainer) {
+			hideModal();
+		}
+	});
+
+	function hideModal() {
+		let modalContainer = document.querySelector("#modal-container");
+		modalContainer.classList.remove("is-visible");
 	}
 
 	return {
