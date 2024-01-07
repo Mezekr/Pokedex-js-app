@@ -30,6 +30,7 @@ main,
 .main-container {
 	display: flex;
 	width: 95%;
+	height: 100%;
 	margin: 2px auto;
 	padding: 1px;
 	gap: 20px;
@@ -49,7 +50,7 @@ main,
 .pokemon-list-container {
 	background-color: rgb(178, 184, 192);
 	padding: 0px;
-	height: 75vh;
+	height: 78vh;
 	overflow: auto;
 	margin: 1px auto;
 }
@@ -182,6 +183,8 @@ footer {
 	background-color: rgb(29, 85, 102);
 	border: 2px solid rgb(0, 0, 0);
 	margin: 2px auto;
+	padding: 10px;
+	text-align: center;
 }
 
 .button-class {
