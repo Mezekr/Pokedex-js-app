@@ -66,6 +66,8 @@ let pokemonRepository = (function () {
 		button.innerText = pokemon.name;
 		// button.classList.add("button-class");
 		button.classList.add("btn", "btn-outline-primary", "w-100");
+		button.setAttribute("data-bs-target", "#bst-modal-container");
+		button.setAttribute("data-bs-toggle", "modal");
 		pokemomlistItem.appendChild(button);
 		pokemomlistItem.classList.add("list-group-item");
 		pokemonList.appendChild(pokemomlistItem);
