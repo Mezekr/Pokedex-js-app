@@ -40,7 +40,7 @@ main,
 .pokemon-list-container {
 	background-color: rgb(178, 184, 192);
 	padding: 0px;
-	height: 78vh;
+	height: 80vh;
 	overflow: auto;
 	margin: 1px auto;
 }
