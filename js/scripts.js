@@ -64,8 +64,10 @@ let pokemonRepository = (function () {
 		let pokemomlistItem = document.createElement("li");
 		let button = document.createElement("button");
 		button.innerText = pokemon.name;
-		button.classList.add("button-class");
+		// button.classList.add("button-class");
+		button.classList.add("btn", "btn-outline-primary", "w-100");
 		pokemomlistItem.appendChild(button);
+		pokemomlistItem.classList.add("list-group-item");
 		pokemonList.appendChild(pokemomlistItem);
 		clickListener(button, pokemon);
 	}
