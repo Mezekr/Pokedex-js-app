@@ -66,7 +66,7 @@ let pokemonRepository = (function () {
 		button.innerText = pokemon.name;
 		// button.classList.add("button-class");
 		button.classList.add("btn", "btn-outline-primary", "w-100");
-		button.setAttribute("data-bs-target", "#bst-modal-container");
+		button.setAttribute("data-bs-target", "#modal-container");
 		button.setAttribute("data-bs-toggle", "modal");
 		pokemomlistItem.appendChild(button);
 		pokemomlistItem.classList.add("list-group-item");
@@ -81,19 +81,22 @@ let pokemonRepository = (function () {
 	}
 
 	function showDetails(pokemon) {
-		let modalContainer = document.querySelector("#modal-container");
-		modalContainer.innerHTML = "";
+		let modalTitle = document.querySelector(".modal-title");
+		let modalBody = document.querySelector(".modal-body");
+
+		modalTitle.innerText = "";
+		modalBody.innerText = "";
 
 		// Modal elements
-		let modal = document.createElement("div");
-		let closeButton = document.createElement("button");
-		closeButton.innerText = "Close";
-		closeButton.classList.add("modal-close");
-
-		// Modal elements to display pokemon datails
-		let pokemonDetail = document.createElement("div");
+		let modalBodyContent = document.createElement("div");
 		let pokemonImg = document.createElement("img");
-		let pokemonName = document.createElement("h2");
+		pokemonImg.classList.add(
+			"img-fluid",
+			"rounded-circle",
+			"border",
+			"border-success"
+		);
+
 		let pokemonStatsDiv = document.createElement("div");
 
 		// pokemon height elements container and elements
@@ -117,7 +120,8 @@ let pokemonRepository = (function () {
 		// Display the pokemon datails
 		loadDetails(pokemon).then(() => {
 			pokemonImg.src = pokemon.imgUrl;
-			pokemonName.innerText = pokemon.name;
+			pokemonImg.alt = `Image of ${pokemon.name}`;
+			modalTitle.innerText = pokemon.name;
 			pokemomHeightH3.innerText = "Height";
 			pokemomHeightP.innerText = pokemon.height;
 			pokemomWeighH3.innerText = "Weght";
@@ -125,52 +129,17 @@ let pokemonRepository = (function () {
 		});
 
 		// add all elements to datail's container (div) of modal
-		pokemonDetail.append(pokemonImg);
-		pokemonDetail.append(pokemonName);
-		pokemonDetail.append(pokemonStatsDiv);
+		modalBodyContent.append(pokemonImg);
+		modalBodyContent.append(pokemonStatsDiv);
 
 		// add css class to elments
-		pokemonName.classList.add("pokemon-name");
 		pokemomHeightP.classList.add("pokemon-stats");
 		pokemomWeightP.classList.add("pokemon-stats");
-		modal.classList.add("modal-wrapper");
 		pokemonStatsDiv.classList.add("pokemon-stats");
-		pokemonDetail.classList.add("modal");
 
 		// append elements to modal
-		modal.appendChild(closeButton);
-		modal.appendChild(pokemonDetail);
-		modalContainer.appendChild(modal);
-
-		modalContainer.classList.add("is-visible");
-
-		// Close the modal by clicking the close button
-		closeButton.addEventListener("click", hideModal);
+		modalBody.append(modalBodyContent);
 	}
-
-	// Close the modal by clicking on the area outside the modal
-	let modalContainer = document.querySelector("#modal-container");
-	modalContainer.addEventListener("click", (e) => {
-		if (e.target === modalContainer) {
-			hideModal();
-		}
-	});
-
-	function hideModal() {
-		let modalContainer = document.querySelector("#modal-container");
-		modalContainer.classList.remove("is-visible");
-	}
-
-	// Close the modal by pressing the Esc key
-	window.addEventListener("keydown", (e) => {
-		let modalContainer = document.querySelector("#modal-container");
-		if (
-			e.key === "Escape" &&
-			modalContainer.classList.contains("is-visible")
-		) {
-			hideModal();
-		}
-	});
 
 	return {
 		add: add,
