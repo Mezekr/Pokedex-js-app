@@ -23,7 +23,7 @@ body {
 header {
 	width: 100%;
 	text-align: center;
-	background-color: rgb(80, 103, 138);
+	background-color: rgb(147 172 207);
 }
 
 main,
@@ -163,8 +163,8 @@ footer {
 	margin-top: auto;
 	width: 100%;
 	padding: 25px;
-	background-color: rgb(29, 85, 102);
-	border: 2px solid rgb(0, 0, 0);
+	background-color: rgb(3, 33, 62);
+	color: #e7e7e7;
 	margin: 2px auto;
 	padding: 10px;
 	text-align: center;
