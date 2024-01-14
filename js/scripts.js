@@ -51,6 +51,7 @@ let pokemonRepository = (function () {
 				item.imgUrl = itemsJson.sprites.front_default;
 				item.height = itemsJson.height;
 				item.weight = itemsJson.weight;
+				item.types = itemsJson.types;
 			});
 		return pokemonData;
 	}
@@ -90,6 +91,7 @@ let pokemonRepository = (function () {
 		let pokemonDetail = document.createElement('div');
 		let pokemonImg = document.createElement('img');
 		let pokemonName = document.createElement('h2');
+		let pokemonTypes = document.createElement('div');
 		let pokemonStatsDiv = document.createElement('div');
 
 		// pokemon height elements container and elements
@@ -110,19 +112,22 @@ let pokemonRepository = (function () {
 		pokemonStatsDiv.appendChild(pokemomHeightDiv);
 		pokemonStatsDiv.appendChild(pokemomWeightDiv);
 
+		pokemonTypes.classList.add('pokemon-types');
+
 		// Display the pokemon datails
 		loadDetails(pokemon).then(() => {
 			pokemonImg.src = pokemon.imgUrl;
 			pokemonName.innerText = pokemon.name;
+			appendTypes(pokemonTypes, pokemon.types);
 			pokemomHeightH3.innerText = 'Height';
 			pokemomHeightP.innerText = pokemon.height;
 			pokemomWeighH3.innerText = 'Weght';
 			pokemomWeightP.innerText = pokemon.weight;
 		});
-
 		// add all elements to datail's container (div) of modal
 		pokemonDetail.append(pokemonImg);
 		pokemonDetail.append(pokemonName);
+		pokemonDetail.appendChild(pokemonTypes);
 		pokemonDetail.append(pokemonStatsDiv);
 
 		// add css class to elments
@@ -143,6 +148,15 @@ let pokemonRepository = (function () {
 		// Close the modal by clicking the close button
 		closeButton.addEventListener('click', hideModal);
 	}
+
+	let appendTypes = (containerElement, pokomonTypes) => {
+		pokomonTypes.forEach((item) => {
+			console.log(item.type.name);
+			let typeSpan = document.createElement('span');
+			typeSpan.textContent = item.type.name;
+			containerElement.appendChild(typeSpan);
+		});
+	};
 
 	// Close the modal by clicking on the area outside the modal
 	let modalContainer = document.querySelector('#modal-container');
