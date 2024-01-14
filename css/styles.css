@@ -128,6 +128,8 @@ main,
 	position: relative;
 	margin: 5px auto;
 	padding: 0;
+	border: 2px solid rgb(12, 164, 40);
+	border-radius: 50%;
 }
 
 .pokemon-name {
