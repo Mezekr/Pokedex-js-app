@@ -198,9 +198,3 @@ function findByName(name) {
 		return pokemonRepository.getAll().filter(check);
 	return `Pokemon with Name ${name} not found.`;
 }
-
-// test: Find a Pokémon by its name, the name is available
-console.log(findByName('Charmander'));
-
-// test: Find a Pokémon by its name, the name is not available
-console.log(findByName('Charmandder'));
