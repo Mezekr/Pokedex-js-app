@@ -10,3 +10,21 @@ A Javascript app to display a list of Pokemon card.
 -   search for a Pokemon by name
 
 ## Project Structure
+
+```
+Pokedex-js-app
+├── README.md
+├── css
+│ ├── styles.css
+│ └── styles.dist.css
+├── img
+│ ├── icons8-search-50.svg
+│ └── pokemon-64.png
+├── index.html
+└── js
+    ├── fetch.umd.js
+    ├── promise-polyfill.js
+    ├── scripts.dist.js
+    ├── scripts.js
+    └── tota11y.min.js
+```
