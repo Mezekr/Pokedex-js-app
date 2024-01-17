@@ -76,8 +76,6 @@ main,
 
 .pokemon-list > li {
 	display: block;
-	/* border: 1px solid rgb(221, 221, 221);
-	background-color: rgb(246, 246, 246); */
 	text-decoration: none;
 	color: rgb(0, 0, 0);
 	width: 168px;
@@ -155,7 +153,6 @@ main,
 	font-weight: 600;
 	margin: 0.1em auto 0.4em;
 	padding: 0.1em;
-	/* border: 2px solid red; */
 }
 
 .pokemon-types {
@@ -209,7 +206,6 @@ footer {
 	border-radius: 20px;
 	color: black;
 	padding: 12px 5px;
-	/* text-align: left; */
 	text-decoration: none;
 	display: block;
 	font-size: 18px;
