@@ -182,6 +182,35 @@ let pokemonRepository = (function () {
 		}
 	});
 
+	let searchInputElement = document.querySelector('#searchInput');
+	searchInputElement.addEventListener('keyup', () => {
+		searchPokemon(searchInputElement.value);
+	});
+
+	function searchPokemon(pokemonName) {
+		filter = pokemonName.toUpperCase();
+		console.log('pokemonName' + filter);
+		let ul = document.querySelector('.pokemon-list');
+		console.log('Ul' + ul);
+		let li = ul.getElementsByTagName('li');
+		console.log('li' + li.length);
+
+		// Loop through all list items, and hide those who don't match
+		// the search query
+		for (let i = 0; i < li.length; i++) {
+			btn = li[i].getElementsByTagName('button')[0];
+			console.log('btn ->' + btn);
+			txtValue = btn.innerText;
+			console.log('txtValue ->' + txtValue);
+
+			if (txtValue.toUpperCase().indexOf(filter) > -1) {
+				li[i].style.display = '';
+			} else {
+				li[i].style.display = 'none';
+			}
+		}
+	}
+
 	return {
 		add: add,
 		getAll: getAll,
