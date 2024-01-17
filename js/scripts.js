@@ -123,6 +123,8 @@ let pokemonRepository = (function () {
 			pokemomHeightP.innerText = pokemon.height;
 			pokemomWeighH3.innerText = 'Weght';
 			pokemomWeightP.innerText = pokemon.weight;
+			//set the background color of the pokemon Card/modal
+			setBgColor(pokemon.types[0].type.name);
 		});
 		// add all elements to datail's container (div) of modal
 		pokemonDetail.append(pokemonImg);
@@ -209,6 +211,35 @@ let pokemonRepository = (function () {
 				li[i].style.display = 'none';
 			}
 		}
+	}
+
+	// Function to set the background colour of the Pokémon Card / Modal
+	let setBgColor = (pokiType) => {
+		let modalElement = document.querySelector('.modal-wrapper');
+		console.log(getBgColor(pokiType));
+		modalElement.style.backgroundColor = `${getBgColor(pokiType)}`;
+	};
+
+	function getBgColor(pokemonType) {
+		const typeColor = {
+			bug: '#26de81',
+			dragon: '#ffeaa7',
+			electric: '#fed330',
+			fairy: '#FF0069',
+			fighting: '#30336b',
+			fire: '#f0932b',
+			flying: '#81ecec',
+			grass: '#00b894',
+			ground: '#EFB549',
+			ghost: '#a55eea',
+			ice: '#74b9ff',
+			normal: '#95afc0',
+			poison: '#6c5ce7',
+			psychic: '#a29bfe',
+			rock: '#2d3436',
+			water: '#0190FF',
+		};
+		return typeColor[pokemonType];
 	}
 
 	return {
