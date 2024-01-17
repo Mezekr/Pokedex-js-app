@@ -82,7 +82,7 @@ main,
 	border: 1px solid rgb(221, 221, 221);
 	background-color: rgb(246, 246, 246);
 	margin: -1px 0 0 0;
-	padding: 10px;
+	padding: 10px 0;
 	text-decoration: none;
 	/* font-size: 1em; */
 	color: rgb(0, 0, 0);
@@ -171,6 +171,23 @@ main,
 	margin: 0.1em auto 0.4em;
 	padding: 0.1em;
 	/* border: 2px solid red; */
+}
+
+.pokemon-types {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+	margin: 20px 0 40px 0;
+}
+
+.pokemon-types span {
+	padding: 5px 20px;
+	border-radius: 20px;
+	color: #fff;
+	letter-spacing: 0.4px;
+	background-color: #404060;
 }
 
 .pokemon-stats {
