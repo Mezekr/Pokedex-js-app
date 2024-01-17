@@ -51,6 +51,7 @@ header {
 	-ms-flex-line-pack: center;
 	align-content: center;
 	background-color: rgb(147 172 207);
+	padding: 20px 25px 13px 1px;
 }
 .logo-container {
 	display: -webkit-box;
@@ -59,6 +60,14 @@ header {
 	place-content: space-between;
 	margin: 0 8px;
 	gap: 10px;
+}
+.appName {
+	font-size: 2.5em;
+	margin: 0.1em 0;
+}
+
+.logo {
+	height: 64px;
 }
 #searchInput {
 	background-image: url('/img/icons8-search-50.svg');
@@ -69,7 +78,7 @@ header {
 	font-size: 16px;
 	padding: 16px 4px 12px 47px;
 	border: 1px solid #ddd;
-	margin: 2px 60px 0 0;
+	margin: 2px 25px 0 0;
 }
 main,
 .main-container {
